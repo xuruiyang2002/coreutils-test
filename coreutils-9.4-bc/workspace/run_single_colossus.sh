@@ -46,7 +46,7 @@ ${KLEE_EXE_PATH} \
     --search=${SEARCH} \
     --libc=uclibc --posix-runtime \
     --watchdog --max-time=${MAX_EXE_TIME}  \
-    --output-dir=${KLEE_OUT_DIR} \
+    --output-dir=${KLEE_OUT_DIR}-colossus \
     --external-calls=all \
     --only-output-states-covering-new \
     ${driver_name}".bc" ${ARGS}

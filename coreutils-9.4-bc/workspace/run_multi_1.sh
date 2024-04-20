@@ -21,7 +21,18 @@ for ((i=0; i<${#programs[@]}; i+=tasks)); do
     # Start the tasks in the background
     for ((j=i; j<i+tasks; j++)); do
         if [[ -n ${programs[j]} ]]; then
-            ./run_single.sh "${programs[j]}" &
+            ./run_single_colossus.sh "${programs[j]}" &
+        fi
+    done
+    # Wait for all background jobs to finish
+    wait
+done
+
+for ((i=0; i<${#programs[@]}; i+=tasks)); do
+    # Start the tasks in the background
+    for ((j=i; j<i+tasks; j++)); do
+        if [[ -n ${programs[j]} ]]; then
+            ./run_single_original.sh "${programs[j]}" &
         fi
     done
     # Wait for all background jobs to finish
