@@ -14,6 +14,6 @@ EXTERNAL_FUNCTION="memchr,memcpy,memset,strchr,strcoll,strcspn,strlen,strncmp,st
     --output-dir=klee-${PROGRAM_PATH}-colossus-getopt-fixed\
     --external-calls=all \
     --only-output-states-covering-new \
-    ../bcfiles/${PROGRAM_PATH}.bc --sym-args 0 1 10 --sym-args 0 2 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout
+    ../bcfiles/${PROGRAM_PATH}.bc --sym-args 0 1 10 --sym-args 0 2 7 --sym-files 1 8 --sym-stdin 8 --sym-stdout
 
 

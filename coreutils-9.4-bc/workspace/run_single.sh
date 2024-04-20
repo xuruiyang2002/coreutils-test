@@ -4,7 +4,7 @@ mkdir ${KLEE_OUT_DIR_ALL}
 KLEE_EXE_PATH="/home/user/recolossus/build/bin/klee"
 MAX_EXE_TIME="30min"
 SEARCH="bfs"
-ARGS="--sym-args 0 1 10 --sym-args 0 2 2 --sym-files 1 8 --sym-stdin 8 --sym-stdout"
+ARGS="--sym-args 0 1 10 --sym-args 0 2 7 --sym-files 1 8 --sym-stdin 8 --sym-stdout"
 EXTERNAL_FUNCTION="memchr,memcpy,memset,strchr,strcoll,strcspn,strlen,strncmp,strpbrk,strspn,strtok,memcmp,memmove,strcat,strcmp,strcpy,strerror,strncat,strncpy,strrchr,strstr,strxfrm"
 
 cd "../bcfiles"
