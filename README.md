@@ -6,7 +6,7 @@ let's build a version of coreutils with gcov support. We will use this later to 
 Change directory to coreutils-9.4-src
 
 ```shell
-coreutils-9.4-src# FORCE_UNSAFE_CONFIGURE=1 ../configure --disable-nls CFLAGS="-g -fprofile-arcs -ftest-coverage"
+coreutils-9.4-src# FORCE_UNSAFE_CONFIGURE=1 ./configure --disable-nls CFLAGS="-g -fprofile-arcs -ftest-coverage"
 coreutils-9.4-src# make
 ```
 
