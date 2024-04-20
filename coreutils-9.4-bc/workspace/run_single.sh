@@ -32,6 +32,7 @@ ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout"
 fi
 
 KLEE_OUT_DIR=${KLEE_OUT_DIR_ALL}/${driver_name}"-"${MAX_EXE_TIME}
+rm -r ${KLEE_OUT_DIR}
 TIME_LOG_TXT=${KLEE_OUT_DIR}/"execute_time.txt"
 
 # run klee to get Ktest inputs
