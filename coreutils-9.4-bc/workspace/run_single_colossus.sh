@@ -31,7 +31,7 @@ elif [ ${driver_name} = "printf" ];then
 ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout"	
 fi
 
-KLEE_OUT_DIR=${KLEE_OUT_DIR_ALL}/${driver_name}"-"${MAX_EXE_TIME}
+KLEE_OUT_DIR=${KLEE_OUT_DIR_ALL}/${driver_name}"-"${MAX_EXE_TIME}"-colossus"
 rm -r ${KLEE_OUT_DIR}
 TIME_LOG_TXT=${KLEE_OUT_DIR}/"execute_time.txt"
 
@@ -46,7 +46,7 @@ ${KLEE_EXE_PATH} \
     --search=${SEARCH} \
     --libc=uclibc --posix-runtime \
     --watchdog --max-time=${MAX_EXE_TIME}  \
-    --output-dir=${KLEE_OUT_DIR}-colossus \
+    --output-dir=${KLEE_OUT_DIR} \
     --external-calls=all \
     --only-output-states-covering-new \
     ${driver_name}".bc" ${ARGS}
