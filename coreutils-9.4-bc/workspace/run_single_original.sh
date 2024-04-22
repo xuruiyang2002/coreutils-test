@@ -1,5 +1,8 @@
 KLEE_OUT_DIR_ALL=${PWD}/"result_all"
-mkdir ${KLEE_OUT_DIR_ALL}
+
+if [ ! -d "${KLEE_OUT_DIR_ALL}" ]; then
+    mkdir ${KLEE_OUT_DIR_ALL}
+fi
 
 KLEE_EXE_PATH="/home/user/recolossus/build/bin/klee"
 MAX_EXE_TIME="30min"
@@ -32,7 +35,7 @@ ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout"
 fi
 
 KLEE_OUT_DIR=${KLEE_OUT_DIR_ALL}/${driver_name}"-"${MAX_EXE_TIME}"-original"
-rm -r ${KLEE_OUT_DIR}
+rm -rf ${KLEE_OUT_DIR}
 TIME_LOG_TXT=${KLEE_OUT_DIR}/"execute_time.txt"
 
 # run klee to get Ktest inputs
