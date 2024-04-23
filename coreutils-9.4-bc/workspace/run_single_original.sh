@@ -47,7 +47,7 @@ ${KLEE_EXE_PATH} \
     --external-calls=all \
     --only-output-states-covering-new \
     ${driver_name}".bc" ${ARGS} &> ${KLEE_OUT_DIR_ALL}/${driver_name}-original-"error.log"
-
+wait
 end_second=$(date +%s)
 touch ${TIME_LOG_TXT}
 echo " "$((end_second-start_second))" " > ${TIME_LOG_TXT}
