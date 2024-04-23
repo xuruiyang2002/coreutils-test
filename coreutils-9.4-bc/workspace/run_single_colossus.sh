@@ -43,7 +43,7 @@ start_second=$(date +%s)
 
 ${KLEE_EXE_PATH} \
     --max-solver-time=30s \
-    --recolossus --max-fuzz-solver-time=10 \
+    --recolossus --max-fuzz-solver-time=20 \
     --recolossus-range=${driver_name}".c,getopt.c" \
     --recolossus-external-function=${EXTERNAL_FUNCTION} \
     --search=${SEARCH} \
