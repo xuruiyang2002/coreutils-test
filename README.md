@@ -9,6 +9,7 @@ Change directory to coreutils-9.4-src
 coreutils-9.4-src# FORCE_UNSAFE_CONFIGURE=1 ./configure --disable-nls CFLAGS="-g -fprofile-arcs -ftest-coverage"
 coreutils-9.4-src# make
 ```
+(If you have problems with make, you can try compiling with clang)
 
 > the `configure` script is being run as the root user. This is generally not recommended for security reasons, as it can lead to inadvertent changes to system files.
 >
