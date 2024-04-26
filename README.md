@@ -21,16 +21,15 @@ We should now have a set of `coreutils` in the `coreutils-9.4-src/src` directory
 
 # Step 2: Run a KLEE evaluation
 
-A script, `run_klee_coreutils.sh`, has been provided to reproduce the results over the coreutils bcfiles which have already been compiled.
+Change directory to coreutils-9.4-bc/workspace, there are four scripts for using klee-recolossus to test coreutils programs.
+
+For example, you can test echo like this
 
 ```shell
-coreutils-9.4-bc# ./run_klee_coreutils.sh
-...
-coreutils-9.4-bc# ls result_all/
-...
+coreutils-9.4-bc/workspace# ./run_single_colossus.sh echo
 ```
 
-We can see the outputs over the `coreutils-9.4-bc/result_all`.
+After testing, We could see the outputs over the `coreutils-9.4-bc/workspace/result_all`.
 
 # Step 3: Replay KLEE generated test cases
 
@@ -40,9 +39,9 @@ Let's take `echo` as an example:
 
 ```shell
 src# rm -f *.gcda # Get rid of any stale gcov files
-src# klee-replay ./echo /home/user/coreutils-test/coreutils-9.4-bc/result_all/echo_output/*.ktest
+src# klee-replay ./echo /home/user/coreutils-test/coreutils-9.4-bc/workspace/result_all/echo_output/*.ktest
 ...
-src# gcov echo
+src# gcov -b -c echo
 ...
 Lines executed: xx.xx % of xxx
 ...
