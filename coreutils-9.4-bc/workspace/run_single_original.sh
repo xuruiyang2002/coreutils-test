@@ -1,11 +1,9 @@
 KLEE_OUT_DIR_ALL=${PWD}/"result_all"
 
-if [ ! -d "${KLEE_OUT_DIR_ALL}" ]; then
-    mkdir ${KLEE_OUT_DIR_ALL}
-fi
+mkdir -p ${KLEE_OUT_DIR_ALL}
 
 KLEE_EXE_PATH="/home/user/recolossus/build/bin/klee"
-MAX_EXE_TIME="30min"
+MAX_EXE_TIME="120min"
 SEARCH="bfs"
 ARGS="--sym-args 0 1 10 --sym-args 0 2 7 --sym-files 1 8 --sym-stdin 8 --sym-stdout"
 EXTERNAL_FUNCTION="memchr,memcpy,memset,strchr,strcoll,strcspn,strlen,strncmp,strpbrk,strspn,strtok,memcmp,memmove,strcat,strcmp,strcpy,strerror,strncat,strncpy,strrchr,strstr,strxfrm"
@@ -21,7 +19,7 @@ ARGS="--sym-args 0 3 10 --sym-files 1 8 --sym-stdin 8 --sym-stdout"
 elif [ ${driver_name} = "dircolors" ];then
 ARGS="--sym-args 0 3 10 --sym-files 2 12 --sym-stdin 12 --sym-stdout"
 elif [ ${driver_name} = "echo" ];then
-ARGS="--sym-args 0 4 30 --sym-files 2 30 --sym-stdin 30 --sym-stdout"
+ARGS="--sym-args 0 4 10 --sym-files 2 20 --sym-stdin 20 --sym-stdout"
 elif [ ${driver_name} = "expr" ];then
 ARGS="--sym-args 0 1 10 --sym-args 0 3 2 --sym-stdout"
 elif [ ${driver_name} = "mknod" ];then
