@@ -33,7 +33,7 @@ After testing, We could see the outputs over the `coreutils-9.4-bc/workspace/res
 
 # Step 3: Replay KLEE generated test cases
 
-We can use the `klee-replay` tool to run a set of test cases at once, one after the other. Now change directory to the `coreutils-9.4-src/obj-gcov/src`, we are going to use `gcov` to see exactly what lines were covered and which weren't.
+We can use the `klee-replay` tool to run a set of test cases at once, one after the other. Now change directory to the `coreutils-9.4-src/src`, we are going to use `gcov` to see exactly what lines were covered and which weren't.
 
 Let's take `echo` as an example:
 
