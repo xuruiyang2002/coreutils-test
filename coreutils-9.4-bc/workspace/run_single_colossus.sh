@@ -45,6 +45,7 @@ ${KLEE_EXE_PATH} \
     --recolossus-range=${driver_name}".c,getopt.c" \
     --recolossus-external-function=${EXTERNAL_FUNCTION} \
     --search=${SEARCH} \
+    --max-sym-array-size=4096 \
     --libc=uclibc --posix-runtime \
     --watchdog --max-time=${MAX_EXE_TIME}  \
     --output-dir=${KLEE_OUT_DIR} \
